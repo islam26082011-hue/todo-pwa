@@ -5,11 +5,20 @@ const tasks_element = document.getElementById("tasks");
 
 const tasks = JSON.parse(localStorage.getItem("tasks")) || [];
 
+const MAX_TASK_LENGTH = 20;
+
 // input listener
 input.addEventListener("input", (e) => {
-  warning.style.visibility = e.target.value.trim()
+  const trimmedValue = e.target.value.trim();
+  warning.style.visibility = trimmedValue && trimmedValue.length <= MAX_TASK_LENGTH
     ? "hidden"
     : "visible";
+
+  if (trimmedValue.length > MAX_TASK_LENGTH) {
+    warning.textContent = `Максимальная длина задачи ${MAX_TASK_LENGTH} символов`;
+  } else {
+    warning.textContent = "Поле не может быть пустым";
+  }
 });
 
 function renderTasks() {
@@ -29,16 +38,10 @@ function renderTasks() {
       localStorage.setItem("tasks", JSON.stringify(tasks));
     });
 
-    // текст задачи
+    // Удалена проверка длины задачи, установлен фиксированный размер текста
     const text = document.createElement("span");
     text.textContent = item.text;
-
-    const len = text.textContent.length;
-    if (len <= 10) text.style.fontSize = "30px";
-    else if (len <= 22) text.style.fontSize = "25px";
-    else if (len <= 27) text.style.fontSize = "20px";
-    else if (len <= 34) text.style.fontSize = "15px";
-    else text.style.fontSize = "10px";
+    text.style.fontSize = "15px";
 
     // кнопки
     const actions = document.createElement("div");
@@ -80,14 +83,15 @@ function renderTasks() {
 renderTasks();
 
 button.addEventListener("click", () => {
-  if (!input.value.trim()) {
+  const trimmedValue = input.value.trim();
+  if (!trimmedValue || trimmedValue.length > MAX_TASK_LENGTH) {
     warning.style.visibility = "visible";
     warning.style.animation = "warning-blink 0.5s";
     return;
   }
 
   tasks.push({
-    text: input.value,
+    text: trimmedValue,
     completed: false,
   });
 
