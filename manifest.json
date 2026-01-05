@@ -1,10 +1,11 @@
 {
     "name": "My Todo App",
     "short_name": "Todo",
-    "start_url": ".",
-    "display": "standalone",
+    "start_url": "/todo-pwa/index.html",
+    "display": "fullscreen",
     "background_color": "#121212",
     "theme_color": "#121212",
+    "splash_pages": null,
     "icons": [
         {
             "src": "icons/icon-192.png",

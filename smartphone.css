@@ -70,6 +70,7 @@
   }
 
   li {
+    font-size: 10px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -85,6 +86,10 @@
     margin-left: 10px;
   }
 
+  .task span {
+    font-size: 10px;
+  }
+
   .actions button {
     margin-left: 5px;
     padding: 5px 10px;
@@ -96,9 +101,11 @@
   .edit {
     background: #ffc107;
     color: white;
+    font-size: 12px;
   }
 
   .delete {
+    font-size: 12px;
     background: #dc3545;
     color: white;
   }

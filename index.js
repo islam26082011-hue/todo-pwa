@@ -38,10 +38,8 @@ function renderTasks() {
       localStorage.setItem("tasks", JSON.stringify(tasks));
     });
 
-    // Удалена проверка длины задачи, установлен фиксированный размер текста
     const text = document.createElement("span");
     text.textContent = item.text;
-    text.style.fontSize = "15px";
 
     // кнопки
     const actions = document.createElement("div");
