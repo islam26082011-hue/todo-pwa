@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="manifest" href="manifest.json" />
+    <meta name="theme-color" content="#121212" />
+    <title>Список задач</title>
+    <link rel="stylesheet" href="./my_screen.css" />
+    <link rel="stylesheet" href="./large_decstop.css">
+  </head>
+  <body>
+    <div class="main-container">
+      <div class="task-creation">
+        <h2>Создайте задачи</h2>
+        <input type="text" id="task_input" placeholder="Введите задачу" />
+        <div id="text_warning">Поле не может быть пустым</div>
+        <button id="create">Добавить</button>
+      </div>
+
+      <main>
+        <ul id="tasks"></ul>
+      </main>
+    </div>
+
+    <script src="./index.js"></script>
+  </body>
+</html>
