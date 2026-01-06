@@ -13,14 +13,20 @@
     <div class="main-container">
       <div class="task-creation">
         <h2>Создайте задачи</h2>
-        <input type="text" id="task_input" placeholder="Введите задачу" />
-        <div id="text_warning">Поле не может быть пустым</div>
         <button id="create">Добавить</button>
       </div>
-
+      
       <main>
         <ul id="tasks"></ul>
       </main>
+    </div>
+    
+    <div class="create_todo__block">
+      <input type="text" id="task_input" placeholder="Введите задачу" />
+      <h3 id = 'description__text'>Описание(необязательно)</h3>
+      <textarea name="description_todo" id="description"></textarea>
+      <div id="text_warning">Поле не может быть пустым</div>
+      <button class="create_todo__block__btn">добавить</button>
     </div>
 
     <script src="./index.js"></script>
